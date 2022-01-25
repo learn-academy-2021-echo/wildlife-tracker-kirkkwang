@@ -81,8 +81,8 @@ end
 
 ```JSON
 {
-	"common_name": "weasel",
-	"latin_name": "Mustela nivalis",
+  "common_name": "weasel",
+  "latin_name": "Mustela nivalis",
   "kingdom": "mammal"
 }
 ```
@@ -115,8 +115,8 @@ end
 
 ```JSON
 {
-	"common_name": "elk",
-	"latin_name": "Cervus canadensis",
+  "common_name": "elk",
+  "latin_name": "Cervus canadensis",
   "kingdom": "mammal"
 }
 ```
@@ -218,32 +218,32 @@ end
 ```
 
 ```JSON
-# result
+// output
 {
-    "id": 2,
-    "common_name": "Painted turtle",
-    "latin_name": "Chrysemys picta",
-    "kingdom": "reptile",
-    "created_at": "2022-01-21T23:26:53.070Z",
-    "updated_at": "2022-01-21T23:26:53.070Z",
-    "sightings": [
-        {
-            "id": 3,
-            "date": "2022-01-12T16:57:00.000Z",
-            "latitude": "45.5152",
-            "longitude": "122.6784",
-            "created_at": "2022-01-22T01:06:08.630Z",
-            "updated_at": "2022-01-22T01:06:28.104Z",
-            "animal_id": 2
-        }
-    ]
+  "id": 2,
+  "common_name": "Painted turtle",
+  "latin_name": "Chrysemys picta",
+  "kingdom": "reptile",
+  "created_at": "2022-01-21T23:26:53.070Z",
+  "updated_at": "2022-01-21T23:26:53.070Z",
+  "sightings": [
+    {
+      "id": 3,
+      "date": "2022-01-12T16:57:00.000Z",
+      "latitude": "45.5152",
+      "longitude": "122.6784",
+      "created_at": "2022-01-22T01:06:08.630Z",
+      "updated_at": "2022-01-22T01:06:28.104Z",
+      "animal_id": 2
+    }
+  ]
 }
 ```
 
 - **Story**: As the consumer of the API, I can run a report to list all sightings during a given time period.
   - _Hint_: Your controller can look like this:
 
-```ruby
+```Ruby
 class SightingsController < ApplicationController
   def index
     sightings = Sighting.where(date: params[:start_date]..params[:end_date])
@@ -434,7 +434,7 @@ end
 ```
 
 ```JSON
- {
+{
   "common_name": "North American beaver",
   "latin_name": "Castor canadensis",
   "kingdom": "mammal",
