@@ -438,7 +438,7 @@ end
   "common_name": "North American beaver",
   "latin_name": "Castor canadensis",
   "kingdom": "mammal",
-  "sightings": [
+  "sightings_attributes": [
     {
       "date": "2022-01-24T08:18:00.000Z",
       "latitude": "45.5152",
