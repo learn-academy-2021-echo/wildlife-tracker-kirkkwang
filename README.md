@@ -217,8 +217,9 @@ def show
 end
 ```
 
+###### output from Postman:
+
 ```JSON
-// output
 {
   "id": 2,
   "common_name": "Painted turtle",
