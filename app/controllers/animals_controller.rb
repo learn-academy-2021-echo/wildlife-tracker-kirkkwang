@@ -1,12 +1,16 @@
+# frozen_string_literal: true
+
 class AnimalsController < ApplicationController
   def index
     animal = Animal.all
     render json: animal
   end
+
   def show
     animal = Animal.find(params[:id]).as_json(include: :sightings)
     render json: animal
   end
+
   def create
     animal = Animal.create(animal_params)
     if animal.valid?
@@ -15,6 +19,7 @@ class AnimalsController < ApplicationController
       render json: animal.errors, status: :unprocessable_entity
     end
   end
+
   def update
     animal = Animal.find(params[:id])
     animal.update(animal_params)
@@ -24,6 +29,7 @@ class AnimalsController < ApplicationController
       render json: animal.errors
     end
   end
+
   def destroy
     animal = Animal.find(params[:id])
     if animal.destroy
@@ -42,7 +48,7 @@ class AnimalsController < ApplicationController
         :common_name,
         :latin_name,
         :kingdom,
-        sightings_attributes: %i[date latitude longitude],
+        sightings_attributes: %i[date latitude longitude]
       )
   end
 end

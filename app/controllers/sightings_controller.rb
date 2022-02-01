@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 class SightingsController < ApplicationController
   def index
     sightings = Sighting.where(date: params[:start_date]..params[:end_date])
     render json: sightings
   end
+
   def create
     sighting = Animal.find(params[:animal_id]).sightings.create(sighting_params)
     if sighting.valid?
@@ -11,6 +14,7 @@ class SightingsController < ApplicationController
       render json: sighting.errors, status: :unprocessable_entity
     end
   end
+
   def update
     sighting = Animal.find(params[:animal_id]).sightings.find(params[:id])
     sighting.update(sighting_params)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,26 +12,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_234811) do
-
+ActiveRecord::Schema.define(version: 20_220_121_234_811) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "animals", force: :cascade do |t|
-    t.string "common_name"
-    t.string "latin_name"
-    t.string "kingdom"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'animals', force: :cascade do |t|
+    t.string 'common_name'
+    t.string 'latin_name'
+    t.string 'kingdom'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "sightings", force: :cascade do |t|
-    t.datetime "date"
-    t.decimal "latitude"
-    t.decimal "longitude"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "animal_id"
+  create_table 'sightings', force: :cascade do |t|
+    t.datetime 'date'
+    t.decimal 'latitude'
+    t.decimal 'longitude'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'animal_id'
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Animal < ApplicationRecord
   has_many :sightings
   accepts_nested_attributes_for :sightings
@@ -9,8 +11,6 @@ class Animal < ApplicationRecord
   private
 
   def latin_name_not_the_same_as_common_name
-    if latin_name == common_name
-      errors.add(:latin_name, 'cannot be the same as common name')
-    end
+    errors.add(:latin_name, 'cannot be the same as common name') if latin_name == common_name
   end
 end
